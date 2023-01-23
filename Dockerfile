@@ -5,7 +5,7 @@ FROM icr.io/codeengine/python:latest
 COPY app.py .
 
 # コマンド実行
-RUN /usr/local/bin/python3 -m pip3 install flask
+RUN /usr/local/bin/python -m pip install flask
 
 # コンテナが接続用にリッスンするポートを指定
 EXPOSE 5000

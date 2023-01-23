@@ -7,7 +7,7 @@ db = client.test1
 col = db.test2
 app = Flask(__name__)                             
 
-@app.route('/')                                   
+@app.post('/')                                   
 def hello_world(): 
     # textで指定されたパラメータをJsonに整形して返す
     #text = request.args.get('text', '') 

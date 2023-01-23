@@ -1,10 +1,17 @@
 from flask import Flask, request
+from pymongo import MongoClient
+import datetime
+
+client = MongoClient("mongodb+srv://ep_hnsr:HCH1qT28znHLWt7X@cluster0.adkku1e.mongodb.net/?retryWrites=true&w=majority")
+db = client.test1
+col = db.test2
 app = Flask(__name__)                             
 
 @app.route('/')                                   
 def hello_world(): 
     # textで指定されたパラメータをJsonに整形して返す
-    text = request.args.get('text', '')                  
+    text = request.args.get('text', '') 
+    col.insert_one({ 'text' : text })
     return { 'text' : text }           
 
 # 外部に公開できるようにポート開放

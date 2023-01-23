@@ -10,9 +10,9 @@ app = Flask(__name__)
 @app.route('/')                                   
 def hello_world(): 
     # textで指定されたパラメータをJsonに整形して返す
-    text = request.args.get('text', '') 
-    col.insert_one({ 'text' : text })
-    return { 'text' : text }           
+    #text = request.args.get('text', '') 
+    col.insert_one({ 'text' : request.args })
+    return request.args          
 
 # 外部に公開できるようにポート開放
 if __name__ == '__main__':                        

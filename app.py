@@ -11,6 +11,8 @@ app = Flask(__name__)
 def hello_world(): 
     # textで指定されたパラメータをJsonに整形して返す
     #text = request.args.get('text', '') 
+    print("request.form" )
+    print(request.get_json() )
     col.insert_one({ 'text' : request.args })
     return request.args          
 

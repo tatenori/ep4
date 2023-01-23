@@ -1,8 +1,13 @@
+import os
 from flask import Flask, request
 from pymongo import MongoClient
 import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
-client = MongoClient("mongodb+srv://ep_hnsr:HCH1qT28znHLWt7X@cluster0.adkku1e.mongodb.net/?retryWrites=true&w=majority")
+print(os.getenv('DBNAME'))
+URI = os.getenv('DBNAME')
+client = MongoClient(URI)
 db = client.test1
 col = db.test2
 app = Flask(__name__)                             

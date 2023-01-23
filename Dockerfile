@@ -1,14 +1,12 @@
 # ベース・イメージ を設定
-FROM python:3.5.2-alpine
+FROM icr.io/codeengine/python:latest
 
 # ファイルをローカルからコンテナ内の指定のパスにコピー
-COPY . /app
-                     
-# ワークディレクトリを設定
-WORKDIR /app
+COPY app.py .
 
 # コマンド実行
-RUN pip install flask
+RUN /usr/local/bin/python3 -m pip3 install --upgrade pip3
+RUN /usr/local/bin/python3 -m pip3 install flask
 
 # コンテナが接続用にリッスンするポートを指定
 EXPOSE 5000

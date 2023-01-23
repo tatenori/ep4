@@ -5,7 +5,6 @@ FROM icr.io/codeengine/python:latest
 COPY app.py .
 
 # コマンド実行
-RUN /usr/local/bin/python3 -m pip3 install --upgrade pip3
 RUN /usr/local/bin/python3 -m pip3 install flask
 
 # コンテナが接続用にリッスンするポートを指定

@@ -13,8 +13,8 @@ def hello_world():
     #text = request.args.get('text', '') 
     print("request.form" )
     print(request.get_json() )
-    col.insert_one({ 'text' : request.args })
-    return request.args          
+    col.insert_one({ 'text' : request.get_json() })
+    return request.get_json()          
 
 # 外部に公開できるようにポート開放
 if __name__ == '__main__':                        

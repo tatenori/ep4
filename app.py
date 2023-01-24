@@ -5,8 +5,8 @@ import datetime
 from dotenv import load_dotenv
 load_dotenv()
 
-print(os.getenv('DBNAME'))
-URI = os.getenv('DBNAME')
+print(os.environ['DBNAME'])
+URI = os.environ['DBNAME']
 client = MongoClient(URI)
 db = client.test1
 col = db.test2

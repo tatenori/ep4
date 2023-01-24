@@ -6,6 +6,7 @@ COPY app.py .
 
 # コマンド実行
 RUN /usr/local/bin/python -m pip install --upgrade pip
+RUN /usr/local/bin/python -m pip install dotenv
 RUN /usr/local/bin/python -m pip install flask
 RUN /usr/local/bin/python -m pip install pymongo
 # コンテナが接続用にリッスンするポートを指定
